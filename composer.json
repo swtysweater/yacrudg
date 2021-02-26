@@ -1,0 +1,19 @@
+{
+    "name": "swtysweater/yacrudg",
+    "description": "CRUD generator for your tables in database.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Swtysweater\\Yacrudg\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Swtysweater\\Yacrudg\\YacrudgServiceProvider"
+            ]
+        }
+    }
+}

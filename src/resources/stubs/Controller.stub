@@ -1,0 +1,45 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\{{modelName}}Request;
+use App\Models\{{modelName}};
+
+class {{modelName}}Controller extends Controller
+{
+    public function index()
+    {
+        ${{modelNamePluralLowerCase}} = {{modelName}}::latest()->get()->toArray();
+
+        return ${{modelNamePluralLowerCase}};
+    }
+
+    public function store($request)
+    {
+        ${{modelNameSingularLowerCase}} = {{modelName}}::create($request->all());
+
+        return ${{modelNameSingularLowerCase}};
+    }
+
+    public function show($id)
+    {
+        ${{modelNameSingularLowerCase}} = {{modelName}}::findOrFail($id)->toArray();
+
+        return ${{modelNameSingularLowerCase}};
+    }
+
+    public function update($request, $id)
+    {
+        ${{modelNameSingularLowerCase}} = {{modelName}}::findOrFail($id);
+        ${{modelNameSingularLowerCase}}->update($request->all());
+
+        return ${{modelNameSingularLowerCase}};
+    }
+
+    public function destroy($id)
+    {
+        {{modelName}}::destroy($id);
+
+        return null;
+    }
+}
