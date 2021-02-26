@@ -14,7 +14,7 @@
         <select name="table" class="form-control">
           @foreach($allTablenames as $tables)
             @if(isset($occupied))
-              @if(!in_array($tables->Tables_in_yacrudg, $occupied))
+              @if(!in_array($tables, $occupied))
                 <option value="{{$tables}}">{{$tables}}</option>
               @endif
             @else
