@@ -28,7 +28,7 @@ class YacrudgController extends Controller
         $tablenames = $this->getTableNames();
         $convertedName = Str::studly(Str::singular($controller));
         $response = app('App\Http\Controllers\\'.$convertedName.'Controller')->index();
-        $columns = $this->getTableColumns('cars');
+        $columns = $this->getTableColumns($controller);
         return view('yacrudg::table', compact('tablenames', 'response', 'controller', 'columns'));
     }
     public function destroyData($controller ,$id)
