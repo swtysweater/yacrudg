@@ -29,6 +29,7 @@ npm i
 npm run dev (2 раза если новый проект)
 php artisan vendor:publish (выбираем YacrudgServiceProvider)
 php artisan migrate
+php artisan make:model Cruds
 php artisan yacrudg::install
 ```
 
