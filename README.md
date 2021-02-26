@@ -1,6 +1,6 @@
 # Yacrudg
 ###### Yet Another CRUD Generator
-<img src="https://raw.githubusercontent.com/swtysweater/yacrudg/main/src/public/img/Logo.png" width="200" height="400"/>  
+<img src="https://raw.githubusercontent.com/swtysweater/yacrudg/main/src/public/img/Logo.png" width="100" height="auto"/>  
 CRUD генератор для Laravel проекта. Курсовая работа.
 
 ## Требования
