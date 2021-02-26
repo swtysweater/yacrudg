@@ -60,7 +60,7 @@ class YacrudgController extends Controller
         } else {
             $occupied = null;
         }
-        $allTablenames = DB::select('SHOW TABLES');
+        $allTablenames = array_map('reset', \DB::select('SHOW TABLES'));
         return view('yacrudg::new', compact('tablenames', 'allTablenames', 'occupied'));
     }
     public function createCRUDSubmit(Request $request)
