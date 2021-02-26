@@ -53,8 +53,12 @@ class YacrudgController extends Controller
     public function createCRUD()
     {
         $tablenames = $this->getTableNames();
-        foreach($tablenames as $table){
-            $occupied[] = $table['tablename'];
+        if(isset($tablenames[0]['tablename'])){
+            foreach($tablenames as $table){
+                $occupied[] = $table['tablename'];
+            }
+        } else {
+            $occupied = null;
         }
         $allTablenames = DB::select('SHOW TABLES');
         return view('yacrudg::new', compact('tablenames', 'allTablenames', 'occupied'));
