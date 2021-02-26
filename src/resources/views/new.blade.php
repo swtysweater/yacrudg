@@ -13,8 +13,14 @@
         <label for="table">Table</label>
         <select name="table" class="form-control">
           @foreach($allTablenames as $tables)
-            @if(!in_array($tables->Tables_in_yacrudg, $occupied))
-              <option value="{{$tables->Tables_in_yacrudg}}">{{$tables->Tables_in_yacrudg}}</option>
+            @if(isset($occupied))
+              @if(!in_array($tables->Tables_in_yacrudg, $occupied))
+                <option value="{{$tables->Tables_in_yacrudg}}">{{$tables->Tables_in_yacrudg}}</option>
+              @endif
+              @else
+                @if(isset($tables->Tables_in_yacrudg))
+                <option value="{{$tables->Tables_in_yacrudg}}">{{$tables->Tables_in_yacrudg}}</option>
+                @endif
             @endif
           @endforeach
         </select>
