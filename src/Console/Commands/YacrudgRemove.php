@@ -44,9 +44,9 @@ class YacrudgRemove extends Command
     {
         $name = $this->argument('name');
         Cruds::where('tablename', '=', Str::plural(strtolower($name)))->delete();
-        File::delete(app_path("/Http/Controllers/{$name}Controller.php"));
-        File::delete(app_path("/Models/{$name}.php"));
-        File::delete(app_path("/Http/Requests/{$name}Request.php"));
-        $this->info('CRUD for '.Str::plural(strtolower($name)).' is successfully created!');
+        File::delete(app_path("/Http/Controllers/Yacrudg/{$name}Controller.php"));
+        File::delete(app_path("/Models/Yacrudg/{$name}.php"));
+        File::delete(app_path("/Http/Requests/Yacrudg/{$name}Request.php"));
+        $this->info('CRUD for '.Str::plural(strtolower($name)).' is successfully removed!');
     }
 }

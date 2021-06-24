@@ -12,15 +12,21 @@
         <div class="form-group">
         <label for="table">Table</label>
         <select name="table" class="form-control">
-          @foreach($allTablenames as $tables)
-            @if(isset($occupied))
-              @if(!in_array($tables, $occupied))
+          @if(!$occupied == false)
+            @foreach($allTablenames as $tables)
+              @if(isset($occupied))
+                @if(!in_array($tables, $occupied))
+                  <option value="{{$tables}}">{{$tables}}</option>
+                @endif
+              @else
                 <option value="{{$tables}}">{{$tables}}</option>
               @endif
-            @else
-              <option value="{{$tables}}">{{$tables}}</option>
-            @endif
-          @endforeach
+            @endforeach
+          @else
+            @foreach($allTablenames as $tables)
+                <option value="{{$tables->Tables_in_yacrudg}}">{{$tables->Tables_in_yacrudg}}</option>
+            @endforeach
+          @endif
         </select>
         </div>
     </div>

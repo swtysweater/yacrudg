@@ -52,7 +52,7 @@ class Yacrudg extends Command
             $this->getStub('Model')
         );
 
-        file_put_contents(app_path("/Models/{$name}.php"), $modelTemplate);
+        file_put_contents(app_path("/Models/Yacrudg/{$name}.php"), $modelTemplate);
     }
 
     protected function controller($name)
@@ -71,7 +71,7 @@ class Yacrudg extends Command
             $this->getStub('Controller')
         );
 
-        file_put_contents(app_path("/Http/Controllers/{$name}Controller.php"), $controllerTemplate);
+        file_put_contents(app_path("/Http/Controllers/Yacrudg/{$name}Controller.php"), $controllerTemplate);
     }
 
     protected function request($name)
@@ -85,7 +85,7 @@ class Yacrudg extends Command
         if(!file_exists($path = app_path('/Http/Requests')))
             mkdir($path, 0777, true);
 
-        file_put_contents(app_path("/Http/Requests/{$name}Request.php"), $requestTemplate);
+        file_put_contents(app_path("/Http/Requests/Yacrudg/{$name}Request.php"), $requestTemplate);
     }
     public function handle()
     {
